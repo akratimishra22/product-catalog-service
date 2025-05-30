@@ -49,9 +49,6 @@ public class ProductServiceImpl implements ProductService {
                     if (product.getPrice() != null) {
                         existingProduct.setPrice(product.getPrice());
                     }
-                    if (product.getQuantity() != null) {
-                        existingProduct.setQuantity(product.getQuantity());
-                    }
                     return repository.save(existingProduct);
                 })
                 .orElseThrow(() -> new RuntimeException("Product not found with id " + id));
